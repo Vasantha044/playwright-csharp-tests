@@ -1,0 +1,3 @@
+Login successful. Dashboard is visible.
+Screenshot taken for failed test: D:\PlaywrightWithC#WithNUnit\PlaywrightTests\bin\Debug\net8.0\../../../allure-results\TestApproveExtraWorkingHours.png
+Screenshot capture failed: Value cannot be null. (Parameter 'key')

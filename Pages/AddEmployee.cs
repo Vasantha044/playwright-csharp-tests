@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 using Microsoft.Playwright;
-using Newtonsoft.Json.Linq;
+using static Microsoft.Playwright.Assertions;  
 
 namespace PlaywrightTests.Pages
 {
@@ -25,8 +25,9 @@ namespace PlaywrightTests.Pages
 
         private async Task EnterFieldAsync(string label, string value)
         {
-            var locator = $"//label[text()='{label}']/preceding-sibling::input";
-            await _page.Locator(locator).FillAsync(value);
+            var locator = _page.Locator($"//label[text()='{label}']/preceding-sibling::input");
+            await locator.FillAsync(value);
+            await Expect(locator).ToHaveValueAsync(value);
         }
 
         public async Task EnterFirstNameLastNameAsync(string firstName, string lastName, string employeeId, string email)
@@ -40,20 +41,39 @@ namespace PlaywrightTests.Pages
             await EnterFieldAsync("Email*", email);
         }
 
-
         public async Task SelectDropdownValuesAsync(string role, string qualification, string reportingTo, string gender, string bloodGroup)
         {
             await RoleDropdown.SelectOptionAsync(new SelectOptionValue { Label = role });
+            var roleValue = await RoleDropdown.InputValueAsync();
+            await Expect(RoleDropdown).ToHaveValueAsync(roleValue);
+
             await QualificationDropdown.SelectOptionAsync(new SelectOptionValue { Label = qualification });
+            var qualValue = await QualificationDropdown.InputValueAsync();
+            await Expect(QualificationDropdown).ToHaveValueAsync(qualValue);
+
             await ReportingDropdown.SelectOptionAsync(new SelectOptionValue { Label = reportingTo });
+            var reportingValue = await ReportingDropdown.InputValueAsync();
+            await Expect(ReportingDropdown).ToHaveValueAsync(reportingValue);
+
             await GenderDropdown.SelectOptionAsync(new SelectOptionValue { Label = gender });
+            var genderValue = await GenderDropdown.InputValueAsync();
+            await Expect(GenderDropdown).ToHaveValueAsync(genderValue);
+
             await BloodGroupDropdown.SelectOptionAsync(new SelectOptionValue { Label = bloodGroup });
+            var bloodValue = await BloodGroupDropdown.InputValueAsync();
+            await Expect(BloodGroupDropdown).ToHaveValueAsync(bloodValue);
         }
 
         public async Task SelectDOBAndDateOfJoiningAsync(string dob, string doj)
         {
-            await _page.Locator("input[name='dob']").FillAsync(dob);
-            await _page.Locator("input[name='joiningDate']").FillAsync(doj);
+            var dobLocator = _page.Locator("input[name='dob']");
+            var dojLocator = _page.Locator("input[name='joiningDate']");
+
+            await dobLocator.FillAsync(dob);
+            await Expect(dobLocator).ToHaveValueAsync(dob);
+
+            await dojLocator.FillAsync(doj);
+            await Expect(dojLocator).ToHaveValueAsync(doj);
         }
 
         public async Task EnterMobileAndDesiginationAndLocationAndDepartmentValuesAsync(string department, string password, string mobile, string location, string designation)
@@ -66,12 +86,13 @@ namespace PlaywrightTests.Pages
             await EnterFieldAsync("Salary*", "12345");
         }
 
-
         public async Task ClickAddButtonAsync()
         {
             await AddButton.ClickAsync();
+
+            // Optionally assert success message (depends on your application)
+            var toast = _page.Locator("text=Saved Successfully").First; // adjust as per app
+            await Expect(toast).ToBeVisibleAsync();
         }
-        
-      
     }
 }

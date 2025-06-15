@@ -1,0 +1,66 @@
+{
+  "uuid": "82d3b4a9-6197-48a0-85e5-a793333e3a8c",
+  "historyId": "c2cbc08507f9b1b574ade3cb003a779b",
+  "testCaseId": "76d1e014c43e886e206732811e644301",
+  "fullName": "PlaywrightTests:PlaywrightTests.Tests.ApplyExtraWorkingHoursTest.TestApplyExtraWorkingHours()",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-69IKO88"
+    },
+    {
+      "name": "language",
+      "value": "C#"
+    },
+    {
+      "name": "framework",
+      "value": "NUnit 3"
+    },
+    {
+      "name": "package",
+      "value": "PlaywrightTests.Tests"
+    },
+    {
+      "name": "testMethod",
+      "value": "TestApplyExtraWorkingHours"
+    },
+    {
+      "name": "testClass",
+      "value": "ApplyExtraWorkingHoursTest"
+    },
+    {
+      "name": "suite",
+      "value": "ApplyExtraWorking Test"
+    },
+    {
+      "name": "tag",
+      "value": "ExtraWork"
+    }
+  ],
+  "links": [],
+  "name": "TestApplyExtraWorkingHours",
+  "status": "broken",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "Microsoft.Playwright.TargetClosedException : Target page, context or browser has been closed\r\nTearDown : Microsoft.Playwright.TargetClosedException : Target page, context or browser has been closed",
+    "trace": "   at Microsoft.Playwright.Transport.Connection.InnerSendMessageToServerAsync[T](ChannelOwner object, String method, Dictionary`2 dictionary, Boolean keepNulls) in /_/src/Playwright/Transport/Connection.cs:line 206\r\n   at Microsoft.Playwright.Transport.Connection.WrapApiCallAsync[T](Func`1 action, Boolean isInternal) in /_/src/Playwright/Transport/Connection.cs:line 535\r\n   at PlaywrightTests.Pages.LoginPage.LoginWithValidOrInvalidCred(String username, String password) in D:\\PlaywrightWithC#WithNUnit\\PlaywrightTests\\Pages\\LoginTestMethods.cs:line 24\r\n   at PlaywrightTests.Tests.ApplyExtraWorkingHoursTest.Setup() in D:\\PlaywrightWithC#WithNUnit\\PlaywrightTests\\Test\\ApplyExtraWorkingTest.cs:line 29\r\n   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.BlockUntilCompleted()\r\n   at NUnit.Framework.Internal.MessagePumpStrategy.NoMessagePumpStrategy.WaitForCompletion(AwaitAdapter awaiter)\r\n   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(Func`1 invoke)\r\n   at NUnit.Framework.Internal.Commands.SetUpTearDownItem.RunSetUpOrTearDownMethod(TestExecutionContext context, IMethodInfo method)\r\n   at NUnit.Framework.Internal.Commands.SetUpTearDownItem.RunSetUp(TestExecutionContext context)\r\n   at NUnit.Framework.Internal.Commands.SetUpTearDownCommand.<>c__DisplayClass0_0.<.ctor>b__0(TestExecutionContext context)\r\n   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.<>c__DisplayClass1_0.<Execute>b__0()\r\n   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)\r\n--TearDown\r\n   at Microsoft.Playwright.Transport.Connection.InnerSendMessageToServerAsync[T](ChannelOwner object, String method, Dictionary`2 dictionary, Boolean keepNulls) in /_/src/Playwright/Transport/Connection.cs:line 206\r\n   at Microsoft.Playwright.Transport.Connection.WrapApiCallAsync[T](Func`1 action, Boolean isInternal) in /_/src/Playwright/Transport/Connection.cs:line 535\r\n   at Microsoft.Playwright.Core.Page.ScreenshotAsync(PageScreenshotOptions options) in /_/src/Playwright/Core/Page.cs:line 691\r\n   at PlaywrightTests.BaseSetup.TearDownAsync() in D:\\PlaywrightWithC#WithNUnit\\PlaywrightTests\\utilities\\BaseSetup.cs:line 73\r\n   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.BlockUntilCompleted()\r\n   at NUnit.Framework.Internal.MessagePumpStrategy.NoMessagePumpStrategy.WaitForCompletion(AwaitAdapter awaiter)\r\n   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(Func`1 invoke)\r\n   at NUnit.Framework.Internal.Commands.SetUpTearDownItem.RunSetUpOrTearDownMethod(TestExecutionContext context, IMethodInfo method)\r\n   at NUnit.Framework.Internal.Commands.SetUpTearDownItem.RunTearDown(TestExecutionContext context)"
+  },
+  "stage": "finished",
+  "steps": [],
+  "attachments": [
+    {
+      "name": "Console Output",
+      "source": "95c086e2-3672-4a08-b57c-748a4318c23a-attachment.txt",
+      "type": "text/plain"
+    }
+  ],
+  "parameters": [],
+  "start": 1749432922878,
+  "stop": 1749432928413
+}

@@ -1,0 +1,80 @@
+{
+  "uuid": "8f77fab3-f4d5-42db-baa2-cb6c2f41b8ba",
+  "historyId": "818287be913807d1e67719494481e195",
+  "testCaseId": "84ad53f3037c2f34e9654d2b88bc796a",
+  "fullName": "PlaywrightTests:PlaywrightTests.Tests.ApplyLeaveTest.TestApproveLeave()",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-69IKO88"
+    },
+    {
+      "name": "language",
+      "value": "C#"
+    },
+    {
+      "name": "framework",
+      "value": "NUnit 3"
+    },
+    {
+      "name": "package",
+      "value": "PlaywrightTests.Tests"
+    },
+    {
+      "name": "testMethod",
+      "value": "TestApproveLeave"
+    },
+    {
+      "name": "testClass",
+      "value": "ApplyLeaveTest"
+    },
+    {
+      "name": "suite",
+      "value": "ApplyLeave Test"
+    }
+  ],
+  "links": [],
+  "name": "TestApproveLeave",
+  "status": "broken",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "System.NullReferenceException : Object reference not set to an instance of an object.",
+    "trace": "   at PlaywrightTests.Tests.ApplyLeaveTest.TestApproveLeave() in D:\\PlaywrightWithC#WithNUnit\\PlaywrightTests\\Test\\ApplyLeaveTest.cs:line 71\r\n   at Allure.Net.Commons.Steps.AllureAbstractStepAspect.WrapAsync(Func`2 target, Object[] args, MethodBase metadata, String stepName, List`1 stepParameters)\r\n   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.GetResult()\r\n   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(Func`1 invoke)\r\n   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)\r\n   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)\r\n   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.<>c__DisplayClass1_0.<Execute>b__0()\r\n   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "TestApproveLeave",
+      "status": "broken",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "Object reference not set to an instance of an object.",
+        "trace": "System.NullReferenceException: Object reference not set to an instance of an object.\r\n   at PlaywrightTests.Tests.ApplyLeaveTest.TestApproveLeave() in D:\\PlaywrightWithC#WithNUnit\\PlaywrightTests\\Test\\ApplyLeaveTest.cs:line 71\r\n   at Allure.Net.Commons.Steps.AllureAbstractStepAspect.WrapAsync(Func`2 target, Object[] args, MethodBase metadata, String stepName, List`1 stepParameters)"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1749987002848,
+      "stop": 1749987002849
+    }
+  ],
+  "attachments": [
+    {
+      "name": "Console Output",
+      "source": "bda22883-77fc-4fe4-86e0-463dda995092-attachment.txt",
+      "type": "text/plain"
+    }
+  ],
+  "parameters": [],
+  "start": 1749986994546,
+  "stop": 1749987003403
+}

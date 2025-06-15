@@ -1,5 +1,4 @@
 {
-  "_comment": "This config is disabled. Using timestamp folder set in C# code.",
   "allure": {
     "directory": "../../../allure-results"
   }

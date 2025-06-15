@@ -1,0 +1,2 @@
+Login successful. Dashboard is visible.
+⚠️ Page already closed. Screenshot not taken.

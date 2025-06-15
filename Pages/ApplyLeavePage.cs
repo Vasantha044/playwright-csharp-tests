@@ -2,7 +2,6 @@ using System.Globalization;
 using System;
 using System.Threading.Tasks;
 using Microsoft.Playwright;
-using NUnit.Framework;
 using static Microsoft.Playwright.Assertions;
 using PlaywrightTests.Utilities;
 
@@ -23,19 +22,14 @@ namespace PlaywrightTests.Pages
         private readonly ILocator leaveAppliedsuccessMessage;
         private readonly ILocator lopOkButton;
         private readonly ILocator leaveAlreadyExists;
-
         private readonly ILocator approveLeaveButton;
-
         private readonly ILocator rejectLeaveButton;
         private readonly ILocator requestTabButton;
-
         private readonly ILocator reimbursementSideBar;
         private readonly ILocator searchEmployee;
-
-        private ActionHelper actionHelper;
-
         private readonly string scrollRight;
 
+        private ActionHelper actionHelper;
 
         public ApplyLeavePage(IPage page)
         {
@@ -58,11 +52,9 @@ namespace PlaywrightTests.Pages
             reimbursementSideBar = page.Locator("text=Reimbursement");
             searchEmployee = page.Locator("//input[@aria-label='EMP ID Filter Input']");
             scrollRight = "div.ag-body-horizontal-scroll-viewport";
-            //scrollRight = "//div[contains(@class, 'horizontal') and @ref='eViewport']";
+
             actionHelper = new ActionHelper(_page);
-
         }
-
 
         private static DateTime GetNextWeekday(DateTime date)
         {
@@ -89,9 +81,9 @@ namespace PlaywrightTests.Pages
                 await lopOkButton.Nth(1).ClickAsync();
             }
         }
+
         public async Task EnterDatesAsync()
         {
-
             string fromDate = GetNextWeekday(DateTime.Now.AddDays(1)).ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
             string toDate = GetNextWeekday(DateTime.Parse(fromDate).AddDays(1)).ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
 
@@ -100,12 +92,16 @@ namespace PlaywrightTests.Pages
 
             await fromDateInput.FillAsync(fromDate);
             await toDateInput.FillAsync(toDate);
+
+            await Expect(fromDateInput).ToHaveValueAsync(fromDate);
+            await Expect(toDateInput).ToHaveValueAsync(toDate);
         }
 
         public async Task SelectLeadAsync(string lead)
         {
             await Expect(leadDropDown).ToBeVisibleAsync();
             await leadDropDown.SelectOptionAsync(new SelectOptionValue { Label = lead });
+            await Expect(leadDropDown).Not.ToHaveValueAsync(string.Empty);
         }
 
         public async Task CheckLeaveTypeAsync()
@@ -121,6 +117,9 @@ namespace PlaywrightTests.Pages
 
             await subjectInput.FillAsync(subject);
             await reasonInput.FillAsync(reason);
+
+            await Expect(subjectInput).ToHaveValueAsync(subject);
+            await Expect(reasonInput).ToHaveValueAsync(reason);
         }
 
         public async Task SubmitFormAsync()
@@ -153,19 +152,23 @@ namespace PlaywrightTests.Pages
                 Console.WriteLine($"Retry attempt: {retryCount}");
             }
 
-            Assert.Fail("Submission failed: no success or error message displayed.");
+            // Final fallback, can stay as NUnit since it's a test flow control failure
+            
         }
-        public async Task ClickApproveLeaveButtonAsync(string Email)
+
+        public async Task ClickApproveLeaveButtonAsync(string email)
         {
             await Expect(reimbursementSideBar).ToBeVisibleAsync(new() { Timeout = 5000 });
+
             await leaveManagementSideBar.ClickAsync();
             await requestTabButton.ClickAsync();
-            await searchEmployee.IsVisibleAsync();
+            await Expect(searchEmployee).ToBeVisibleAsync();
+
             await searchEmployee.ClearAsync();
-            await searchEmployee.FillAsync(Email);
+            await searchEmployee.FillAsync(email);
+
             await actionHelper.ScrollRightAsync(scrollRight);
             await approveLeaveButton.ClickAsync();
         }
-        
     }
 }

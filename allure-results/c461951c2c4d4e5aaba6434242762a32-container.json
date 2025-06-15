@@ -1,0 +1,12 @@
+{
+  "uuid": "b7dbed89-c883-4ae3-8379-fcffb23600f1",
+  "name": "PlaywrightTests.Tests.LoginTest.TC_01_LoginWithValidCredentials",
+  "children": [
+    "4a8a395f-4f21-4891-8a2f-6ab63d87d6a5"
+  ],
+  "befores": [],
+  "afters": [],
+  "links": [],
+  "start": 1749433277163,
+  "stop": 1749433284673
+}

@@ -1,0 +1,84 @@
+{
+  "uuid": "3829c9c6-b8b7-406e-934e-080112596c8b",
+  "historyId": "c2cbc08507f9b1b574ade3cb003a779b",
+  "testCaseId": "76d1e014c43e886e206732811e644301",
+  "fullName": "PlaywrightTests:PlaywrightTests.Tests.ApplyExtraWorkingHoursTest.TestApplyExtraWorkingHours()",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-69IKO88"
+    },
+    {
+      "name": "language",
+      "value": "C#"
+    },
+    {
+      "name": "framework",
+      "value": "NUnit 3"
+    },
+    {
+      "name": "package",
+      "value": "PlaywrightTests.Tests"
+    },
+    {
+      "name": "testMethod",
+      "value": "TestApplyExtraWorkingHours"
+    },
+    {
+      "name": "testClass",
+      "value": "ApplyExtraWorkingHoursTest"
+    },
+    {
+      "name": "suite",
+      "value": "ApplyExtraWorking Test"
+    },
+    {
+      "name": "tag",
+      "value": "ExtraWork"
+    }
+  ],
+  "links": [],
+  "name": "TestApplyExtraWorkingHours",
+  "status": "broken",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "System.TimeoutException : Timeout 60000ms exceeded.\nCall log:\n  - waiting for Locator(\"text=Reimbursement\")\r\nTearDown : System.ArgumentNullException : Value cannot be null. (Parameter 'key')",
+    "trace": "   at Microsoft.Playwright.Transport.Connection.InnerSendMessageToServerAsync[T](ChannelOwner object, String method, Dictionary`2 dictionary, Boolean keepNulls) in /_/src/Playwright/Transport/Connection.cs:line 206\r\n   at Microsoft.Playwright.Transport.Connection.WrapApiCallAsync[T](Func`1 action, Boolean isInternal) in /_/src/Playwright/Transport/Connection.cs:line 535\r\n   at PlaywrightTests.Pages.ApplyExtraWorkingPage.ClickReimbursementSideBarAsync() in D:\\PlaywrightWithC#WithNUnit\\PlaywrightTests\\Pages\\ApplyExtraWorking.cs:line 37\r\n   at PlaywrightTests.Tests.ApplyExtraWorkingHoursTest.TestApplyExtraWorkingHours() in D:\\PlaywrightWithC#WithNUnit\\PlaywrightTests\\Test\\ApplyExtraWorkingTest.cs:line 50\r\n   at Allure.Net.Commons.Steps.AllureAbstractStepAspect.WrapAsync(Func`2 target, Object[] args, MethodBase metadata, String stepName, List`1 stepParameters)\r\n   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.BlockUntilCompleted()\r\n   at NUnit.Framework.Internal.MessagePumpStrategy.NoMessagePumpStrategy.WaitForCompletion(AwaitAdapter awaiter)\r\n   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(Func`1 invoke)\r\n   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)\r\n   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)\r\n   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.<>c__DisplayClass1_0.<Execute>b__0()\r\n   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)\r\n--TearDown\r\n   at System.ThrowHelper.ThrowArgumentNullException(String name)\r\n   at System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue(TKey key, TValue& value)\r\n   at System.Collections.Concurrent.ConcurrentDictionary`2.get_Item(TKey key)\r\n   at Allure.Commons.Storage.AllureStorage.Get[T](String uuid)\r\n   at Allure.Commons.AllureLifecycle.AddAttachment(String name, String type, Byte[] content, String fileExtension)\r\n   at Allure.Commons.AllureLifecycle.AddAttachment(String name, String type, String path)\r\n   at PlaywrightTests.BaseSetup.TearDownAsync() in D:\\PlaywrightWithC#WithNUnit\\PlaywrightTests\\utilities\\BaseSetup.cs:line 79\r\n   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.BlockUntilCompleted()\r\n   at NUnit.Framework.Internal.MessagePumpStrategy.NoMessagePumpStrategy.WaitForCompletion(AwaitAdapter awaiter)\r\n   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(Func`1 invoke)\r\n   at NUnit.Framework.Internal.Commands.SetUpTearDownItem.RunSetUpOrTearDownMethod(TestExecutionContext context, IMethodInfo method)\r\n   at NUnit.Framework.Internal.Commands.SetUpTearDownItem.RunTearDown(TestExecutionContext context)"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "TestApplyExtraWorkingHours",
+      "status": "broken",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "Timeout 60000ms exceeded.\nCall log:\n  - waiting for Locator(\"text=Reimbursement\")",
+        "trace": "System.TimeoutException: Timeout 60000ms exceeded.\nCall log:\n  - waiting for Locator(\"text=Reimbursement\")\r\n   at Microsoft.Playwright.Transport.Connection.InnerSendMessageToServerAsync[T](ChannelOwner object, String method, Dictionary`2 dictionary, Boolean keepNulls) in /_/src/Playwright/Transport/Connection.cs:line 206\r\n   at Microsoft.Playwright.Transport.Connection.WrapApiCallAsync[T](Func`1 action, Boolean isInternal) in /_/src/Playwright/Transport/Connection.cs:line 535\r\n   at PlaywrightTests.Pages.ApplyExtraWorkingPage.ClickReimbursementSideBarAsync() in D:\\PlaywrightWithC#WithNUnit\\PlaywrightTests\\Pages\\ApplyExtraWorking.cs:line 37\r\n   at PlaywrightTests.Tests.ApplyExtraWorkingHoursTest.TestApplyExtraWorkingHours() in D:\\PlaywrightWithC#WithNUnit\\PlaywrightTests\\Test\\ApplyExtraWorkingTest.cs:line 50\r\n   at Allure.Net.Commons.Steps.AllureAbstractStepAspect.WrapAsync(Func`2 target, Object[] args, MethodBase metadata, String stepName, List`1 stepParameters)"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1749433028136,
+      "stop": 1749433138447
+    }
+  ],
+  "attachments": [
+    {
+      "name": "Console Output",
+      "source": "57854e98-75cd-4dbf-b097-533de83f2636-attachment.txt",
+      "type": "text/plain"
+    }
+  ],
+  "parameters": [],
+  "start": 1749433020342,
+  "stop": 1749433138641
+}

@@ -1,0 +1,75 @@
+{
+  "uuid": "9e370211-6b7e-4382-94ff-bc0acc751832",
+  "historyId": "c2cbc08507f9b1b574ade3cb003a779b",
+  "testCaseId": "76d1e014c43e886e206732811e644301",
+  "fullName": "PlaywrightTests:PlaywrightTests.Tests.ApplyExtraWorkingHoursTest.TestApplyExtraWorkingHours()",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-69IKO88"
+    },
+    {
+      "name": "language",
+      "value": "C#"
+    },
+    {
+      "name": "framework",
+      "value": "NUnit 3"
+    },
+    {
+      "name": "package",
+      "value": "PlaywrightTests.Tests"
+    },
+    {
+      "name": "testMethod",
+      "value": "TestApplyExtraWorkingHours"
+    },
+    {
+      "name": "testClass",
+      "value": "ApplyExtraWorkingHoursTest"
+    },
+    {
+      "name": "suite",
+      "value": "ApplyExtraWorking Test"
+    },
+    {
+      "name": "tag",
+      "value": "ExtraWork"
+    }
+  ],
+  "links": [],
+  "name": "TestApplyExtraWorkingHours",
+  "status": "passed",
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "TestApplyExtraWorkingHours",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1749446576274,
+      "stop": 1749446634884
+    }
+  ],
+  "attachments": [
+    {
+      "name": "Console Output",
+      "source": "b4975f1e-0a9d-40d9-bc16-d520d3d0fb00-attachment.txt",
+      "type": "text/plain"
+    }
+  ],
+  "parameters": [],
+  "start": 1749446568332,
+  "stop": 1749446635207
+}

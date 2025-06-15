@@ -2,10 +2,8 @@ using System;
 using System.Globalization;
 using System.Threading.Tasks;
 using Microsoft.Playwright;
-using NUnit.Framework;
 using static Microsoft.Playwright.Assertions;
 using PlaywrightTests.Utilities;
-
 
 namespace PlaywrightTests.Pages
 {
@@ -25,11 +23,8 @@ namespace PlaywrightTests.Pages
         private ActionHelper? actionHelper;
 
         private readonly ILocator leaveManagementSideBar;
-
         private readonly ILocator requestTabButton;
-
         private readonly string scrollRight;
-
         private readonly ILocator approveLeaveButton;
 
         public ApplyExtraWorkingPage(IPage page)
@@ -47,21 +42,19 @@ namespace PlaywrightTests.Pages
             requestTabButton = page.Locator("//button[text()='Requests']");
             searchEmployee = page.Locator("//input[@aria-label='EMP ID Filter Input']");
             scrollRight = "div.ag-body-horizontal-scroll-viewport";
-            approveLeaveButton =page.Locator("(//button[text()='Approve'])[1]");
+            approveLeaveButton = page.Locator("(//button[text()='Approve'])[1]");
         }
 
         public async Task ClickReimbursementSideBarAsync()
         {
             await reimbursementSideBar.ClickAsync();
-            Assert.That(await applyExtraWorkButton.IsVisibleAsync(), Is.True,
-                "Apply Extra Work button is not visible after clicking Reimbursement sidebar.");
+            await Expect(applyExtraWorkButton).ToBeVisibleAsync();
         }
 
         public async Task ClickApplyExtraWorkButtonAsync()
         {
             await applyExtraWorkButton.ClickAsync();
-            Assert.That(await applyReimbursementDialogBox.IsVisibleAsync(), Is.True,
-                "Apply Reimbursement dialog is not visible after clicking Apply Extra Work button.");
+            await Expect(applyReimbursementDialogBox).ToBeVisibleAsync();
         }
 
         public async Task EnterRandomDateAndHoursAsync()
@@ -75,20 +68,14 @@ namespace PlaywrightTests.Pages
             await dateInput.FillAsync(formattedDate);
             await enterExtraHoursInput.FillAsync(hours);
 
-            string actualDate = await dateInput.InputValueAsync();
-            string actualHours = await enterExtraHoursInput.InputValueAsync();
-
-            Assert.That(actualDate, Is.EqualTo(formattedDate), "Date input value mismatch.");
-            Assert.That(actualHours, Is.EqualTo(hours), "Hours input value mismatch.");
+            await Expect(dateInput).ToHaveValueAsync(formattedDate);
+            await Expect(enterExtraHoursInput).ToHaveValueAsync(hours);
         }
 
         public async Task SelectLeadAsync(string lead)
         {
-            await selectLeadDropDn.ClickAsync();
             await selectLeadDropDn.SelectOptionAsync(new SelectOptionValue { Label = lead });
-            var selectedValue = await selectLeadDropDn.InputValueAsync();
-
-            Assert.That(string.IsNullOrEmpty(selectedValue), Is.False, "No lead selected.");
+            await Expect(selectLeadDropDn).Not.ToHaveValueAsync(string.Empty);
         }
 
         public async Task SubmitFormAsync()
@@ -98,27 +85,22 @@ namespace PlaywrightTests.Pages
 
         public async Task AssertExtraWorkAppliedAsync()
         {
-            await extraWorkingHoursAppliedsuccessMessage.WaitForAsync(new LocatorWaitForOptions
-            {
-                State = WaitForSelectorState.Visible,
-                Timeout = 5000
-            });
-
-            bool isSuccessMessageVisible = await extraWorkingHoursAppliedsuccessMessage.IsVisibleAsync();
-            Assert.That(isSuccessMessageVisible, Is.True, "Success message not visible after submitting form.");
+            await Expect(extraWorkingHoursAppliedsuccessMessage).ToBeVisibleAsync();
+            
         }
-        
-          public async Task ClickApproveLeaveButtonAsync(string Email)
+
+        public async Task ClickApproveLeaveButtonAsync(string email)
         {
-            await Expect(reimbursementSideBar).ToBeVisibleAsync(new() { Timeout = 5000 });
+            await Expect(reimbursementSideBar).ToBeVisibleAsync();
+
             await leaveManagementSideBar.ClickAsync();
             await requestTabButton.ClickAsync();
-            await searchEmployee.IsVisibleAsync();
-            await searchEmployee.ClearAsync();
-            await searchEmployee.FillAsync(Email);
-            await actionHelper.ScrollRightAsync(scrollRight);
+
+            await Expect(searchEmployee).ToBeVisibleAsync();
+            await searchEmployee.FillAsync(email);
+
+            await actionHelper?.ScrollRightAsync(scrollRight);
             await approveLeaveButton.ClickAsync();
         }
-        
     }
 }

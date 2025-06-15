@@ -65,5 +65,4 @@
   <RemoveDir Directories="$(MSBuildProjectDirectory)\allure-results" />
 </Target>
 
-
 </Project>

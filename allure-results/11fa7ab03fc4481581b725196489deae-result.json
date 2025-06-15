@@ -1,0 +1,71 @@
+{
+  "uuid": "7e0e80e4-16fa-47a9-bb4b-b507997b24c9",
+  "historyId": "818287be913807d1e67719494481e195",
+  "testCaseId": "84ad53f3037c2f34e9654d2b88bc796a",
+  "fullName": "PlaywrightTests:PlaywrightTests.Tests.ApplyLeaveTest.TestApproveLeave()",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-69IKO88"
+    },
+    {
+      "name": "language",
+      "value": "C#"
+    },
+    {
+      "name": "framework",
+      "value": "NUnit 3"
+    },
+    {
+      "name": "package",
+      "value": "PlaywrightTests.Tests"
+    },
+    {
+      "name": "testMethod",
+      "value": "TestApproveLeave"
+    },
+    {
+      "name": "testClass",
+      "value": "ApplyLeaveTest"
+    },
+    {
+      "name": "suite",
+      "value": "ApplyLeave Test"
+    }
+  ],
+  "links": [],
+  "name": "TestApproveLeave",
+  "status": "passed",
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "TestApproveLeave",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1749446142862,
+      "stop": 1749446188167
+    }
+  ],
+  "attachments": [
+    {
+      "name": "Console Output",
+      "source": "53e0eb5b-a1b8-46ca-b41b-6b0efb4139aa-attachment.txt",
+      "type": "text/plain"
+    }
+  ],
+  "parameters": [],
+  "start": 1749446135858,
+  "stop": 1749446188413
+}

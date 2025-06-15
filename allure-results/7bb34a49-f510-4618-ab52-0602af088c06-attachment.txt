@@ -1,0 +1,3 @@
+Login successful. Dashboard is visible.
+Screenshot taken for failed test: TestApproveLeave
+Screenshot capture failed: Value cannot be null. (Parameter 'key')

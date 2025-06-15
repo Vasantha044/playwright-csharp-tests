@@ -1,0 +1,1 @@
+D:\PlaywrightWithC#WithNUnit\PlaywrightTests\bin\Debug\net8.0\../../../allure-results\allure-results-2025-06-15_14-55-09

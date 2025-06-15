@@ -1,0 +1,3 @@
+Login successful. Dashboard is visible.
+TestJoan95@gmail.comTestConnie_Daugherty@gmail.comLogin failed. Invalid credentials message is visible.
+Failed to capture failure artifacts: Value cannot be null. (Parameter 'key')

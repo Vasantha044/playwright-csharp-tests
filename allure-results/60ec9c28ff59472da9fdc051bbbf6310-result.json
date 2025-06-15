@@ -1,0 +1,80 @@
+{
+  "uuid": "bba7d9e3-d5ad-4a76-9b9c-fadcf58c6afa",
+  "historyId": "818287be913807d1e67719494481e195",
+  "testCaseId": "84ad53f3037c2f34e9654d2b88bc796a",
+  "fullName": "PlaywrightTests:PlaywrightTests.Tests.ApplyLeaveTest.TestApproveLeave()",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-69IKO88"
+    },
+    {
+      "name": "language",
+      "value": "C#"
+    },
+    {
+      "name": "framework",
+      "value": "NUnit 3"
+    },
+    {
+      "name": "package",
+      "value": "PlaywrightTests.Tests"
+    },
+    {
+      "name": "testMethod",
+      "value": "TestApproveLeave"
+    },
+    {
+      "name": "testClass",
+      "value": "ApplyLeaveTest"
+    },
+    {
+      "name": "suite",
+      "value": "ApplyLeave Test"
+    }
+  ],
+  "links": [],
+  "name": "TestApproveLeave",
+  "status": "broken",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "Microsoft.Playwright.PlaywrightException : SyntaxError: Failed to execute 'querySelector' on 'Document': '//div[contains(@class, 'horizontal') and @ref='eViewport']' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:1:10)\n    at eval (<anonymous>)\n    at UtilityScript.evaluate (<anonymous>:313:29)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\r\nTearDown : System.ArgumentNullException : Value cannot be null. (Parameter 'key')",
+    "trace": "   at Microsoft.Playwright.Transport.Connection.InnerSendMessageToServerAsync[T](ChannelOwner object, String method, Dictionary`2 dictionary, Boolean keepNulls) in /_/src/Playwright/Transport/Connection.cs:line 206\r\n   at Microsoft.Playwright.Transport.Connection.WrapApiCallAsync[T](Func`1 action, Boolean isInternal) in /_/src/Playwright/Transport/Connection.cs:line 535\r\n   at Microsoft.Playwright.Core.Frame.EvaluateAsync(String script, Object arg) in /_/src/Playwright/Core/Frame.cs:line 693\r\n   at PlaywrightTests.Utilities.ActionHelper.ScrollRightAsync(String selector) in D:\\PlaywrightWithC#WithNUnit\\PlaywrightTests\\utilities\\utiliteMethods.cs:line 112\r\n   at PlaywrightTests.Pages.ApplyLeavePage.ClickApproveLeaveButtonAsync(String Email) in D:\\PlaywrightWithC#WithNUnit\\PlaywrightTests\\Pages\\ApplyLeavePage.cs:line 165\r\n   at PlaywrightTests.Tests.ApplyLeaveTest.TestApproveLeave() in D:\\PlaywrightWithC#WithNUnit\\PlaywrightTests\\Test\\ApplyLeaveTest.cs:line 72\r\n   at Allure.Net.Commons.Steps.AllureAbstractStepAspect.WrapAsync(Func`2 target, Object[] args, MethodBase metadata, String stepName, List`1 stepParameters)\r\n   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.BlockUntilCompleted()\r\n   at NUnit.Framework.Internal.MessagePumpStrategy.NoMessagePumpStrategy.WaitForCompletion(AwaitAdapter awaiter)\r\n   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(Func`1 invoke)\r\n   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)\r\n   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)\r\n   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.<>c__DisplayClass1_0.<Execute>b__0()\r\n   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)\r\n--TearDown\r\n   at System.ThrowHelper.ThrowArgumentNullException(String name)\r\n   at System.Collections.Concurrent.ConcurrentDictionary`2.TryGetValue(TKey key, TValue& value)\r\n   at System.Collections.Concurrent.ConcurrentDictionary`2.get_Item(TKey key)\r\n   at Allure.Commons.Storage.AllureStorage.Get[T](String uuid)\r\n   at Allure.Commons.AllureLifecycle.AddAttachment(String name, String type, Byte[] content, String fileExtension)\r\n   at Allure.Commons.AllureLifecycle.AddAttachment(String name, String type, String path)\r\n   at PlaywrightTests.BaseSetup.TearDownAsync() in D:\\PlaywrightWithC#WithNUnit\\PlaywrightTests\\utilities\\BaseSetup.cs:line 79\r\n   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.BlockUntilCompleted()\r\n   at NUnit.Framework.Internal.MessagePumpStrategy.NoMessagePumpStrategy.WaitForCompletion(AwaitAdapter awaiter)\r\n   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(Func`1 invoke)\r\n   at NUnit.Framework.Internal.Commands.SetUpTearDownItem.RunSetUpOrTearDownMethod(TestExecutionContext context, IMethodInfo method)\r\n   at NUnit.Framework.Internal.Commands.SetUpTearDownItem.RunTearDown(TestExecutionContext context)"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "TestApproveLeave",
+      "status": "broken",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "SyntaxError: Failed to execute 'querySelector' on 'Document': '//div[contains(@class, 'horizontal') and @ref='eViewport']' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:1:10)\n    at eval (<anonymous>)\n    at UtilityScript.evaluate (<anonymous>:313:29)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+        "trace": "Microsoft.Playwright.PlaywrightException: SyntaxError: Failed to execute 'querySelector' on 'Document': '//div[contains(@class, 'horizontal') and @ref='eViewport']' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:1:10)\n    at eval (<anonymous>)\n    at UtilityScript.evaluate (<anonymous>:313:29)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\r\n   at Microsoft.Playwright.Transport.Connection.InnerSendMessageToServerAsync[T](ChannelOwner object, String method, Dictionary`2 dictionary, Boolean keepNulls) in /_/src/Playwright/Transport/Connection.cs:line 206\r\n   at Microsoft.Playwright.Transport.Connection.WrapApiCallAsync[T](Func`1 action, Boolean isInternal) in /_/src/Playwright/Transport/Connection.cs:line 535\r\n   at Microsoft.Playwright.Core.Frame.EvaluateAsync(String script, Object arg) in /_/src/Playwright/Core/Frame.cs:line 693\r\n   at PlaywrightTests.Utilities.ActionHelper.ScrollRightAsync(String selector) in D:\\PlaywrightWithC#WithNUnit\\PlaywrightTests\\utilities\\utiliteMethods.cs:line 112\r\n   at PlaywrightTests.Pages.ApplyLeavePage.ClickApproveLeaveButtonAsync(String Email) in D:\\PlaywrightWithC#WithNUnit\\PlaywrightTests\\Pages\\ApplyLeavePage.cs:line 165\r\n   at PlaywrightTests.Tests.ApplyLeaveTest.TestApproveLeave() in D:\\PlaywrightWithC#WithNUnit\\PlaywrightTests\\Test\\ApplyLeaveTest.cs:line 72\r\n   at Allure.Net.Commons.Steps.AllureAbstractStepAspect.WrapAsync(Func`2 target, Object[] args, MethodBase metadata, String stepName, List`1 stepParameters)"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1749454716742,
+      "stop": 1749454728356
+    }
+  ],
+  "attachments": [
+    {
+      "name": "Console Output",
+      "source": "d14f736d-2b0c-404d-9bce-169ed480a25c-attachment.txt",
+      "type": "text/plain"
+    }
+  ],
+  "parameters": [],
+  "start": 1749454710117,
+  "stop": 1749454728606
+}

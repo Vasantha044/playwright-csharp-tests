@@ -520,4 +520,6 @@ D:\PlaywrightWithC#WithNUnit\PlaywrightTests\obj\Debug\net8.0\refint\PlaywrightT
 D:\PlaywrightWithC#WithNUnit\PlaywrightTests\obj\Debug\net8.0\PlaywrightTests.pdb
 D:\PlaywrightWithC#WithNUnit\PlaywrightTests\obj\Debug\net8.0\PlaywrightTests.genruntimeconfig.cache
 D:\PlaywrightWithC#WithNUnit\PlaywrightTests\obj\Debug\net8.0\ref\PlaywrightTests.dll
+D:\PlaywrightWithC#WithNUnit\PlaywrightTests\obj\Debug\net8.0\PlaywrightTests.sourcelink.json
+D:\PlaywrightWithC#WithNUnit\PlaywrightTests\bin\Debug\net8.0\appSettings.json
 D:\PlaywrightWithC#WithNUnit\PlaywrightTests\bin\Debug\net8.0\allureConfig.json
