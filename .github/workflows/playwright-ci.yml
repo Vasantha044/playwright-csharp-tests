@@ -9,25 +9,25 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: '8.0.x'
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
 
-    - name: Restore dependencies
-      run: dotnet restore
+      - name: Restore dependencies
+        run: dotnet restore
 
-    - name: Build project
-      run: dotnet build --configuration Release
+      - name: Build project
+        run: dotnet build --configuration Release
 
-    - name: Install Playwright CLI
-      run: dotnet tool install --global Microsoft.Playwright.CLI
+      - name: Install Playwright CLI
+        run: dotnet tool install --global Microsoft.Playwright.CLI
 
-    - name: Install Playwright Browsers
-      run: playwright install
+      - name: Install Playwright Browsers
+        run: playwright install
 
-    - name: Run Tests
-      run: dotnet test --configuration Release
+      - name: Run tests
+        run: dotnet test --configuration Release --settings PlaywrightTests/test.runsettings
