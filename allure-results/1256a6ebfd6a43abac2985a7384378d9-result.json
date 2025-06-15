@@ -1,0 +1,62 @@
+{
+  "uuid": "f01fef34-89e2-42ad-85b1-2de20644f22e",
+  "historyId": "818287be913807d1e67719494481e195",
+  "testCaseId": "84ad53f3037c2f34e9654d2b88bc796a",
+  "fullName": "PlaywrightTests:PlaywrightTests.Tests.ApplyLeaveTest.TestApproveLeave()",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-69IKO88"
+    },
+    {
+      "name": "language",
+      "value": "C#"
+    },
+    {
+      "name": "framework",
+      "value": "NUnit 3"
+    },
+    {
+      "name": "package",
+      "value": "PlaywrightTests.Tests"
+    },
+    {
+      "name": "testMethod",
+      "value": "TestApproveLeave"
+    },
+    {
+      "name": "testClass",
+      "value": "ApplyLeaveTest"
+    },
+    {
+      "name": "suite",
+      "value": "ApplyLeave Test"
+    }
+  ],
+  "links": [],
+  "name": "TestApproveLeave",
+  "status": "broken",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "System.TypeInitializationException : The type initializer for 'PlaywrightTests.Utilities.ConfigManager' threw an exception.\r\n  ----> System.IO.FileNotFoundException : The configuration file 'appsettings.json' was not found and is not optional. The expected physical path was 'D:\\PlaywrightWithC#WithNUnit\\PlaywrightTests\\bin\\Debug\\net8.0\\appsettings.json'.",
+    "trace": "   at PlaywrightTests.Utilities.ConfigManager.get_Settings() in D:\\PlaywrightWithC#WithNUnit\\PlaywrightTests\\utilities\\ConfigManager.cs:line 11\r\n   at PlaywrightTests.Tests.ApplyLeaveTest.Init() in D:\\PlaywrightWithC#WithNUnit\\PlaywrightTests\\Test\\ApplyLeaveTest.cs:line 30\r\n   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.GetResult()\r\n   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(Func`1 invoke)\r\n   at NUnit.Framework.Internal.Commands.SetUpTearDownItem.RunSetUpOrTearDownMethod(TestExecutionContext context, IMethodInfo method)\r\n   at NUnit.Framework.Internal.Commands.SetUpTearDownItem.RunSetUp(TestExecutionContext context)\r\n   at NUnit.Framework.Internal.Commands.SetUpTearDownCommand.<>c__DisplayClass0_0.<.ctor>b__0(TestExecutionContext context)\r\n   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.<>c__DisplayClass1_0.<Execute>b__0()\r\n   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)\r\n--FileNotFoundException\r\n   at Microsoft.Extensions.Configuration.FileConfigurationProvider.HandleException(ExceptionDispatchInfo info)\r\n   at Microsoft.Extensions.Configuration.FileConfigurationProvider.Load(Boolean reload)\r\n   at Microsoft.Extensions.Configuration.FileConfigurationProvider.Load()\r\n   at Microsoft.Extensions.Configuration.ConfigurationRoot..ctor(IList`1 providers)\r\n   at Microsoft.Extensions.Configuration.ConfigurationBuilder.Build()\r\n   at PlaywrightTests.Utilities.ConfigManager.LoadConfiguration() in D:\\PlaywrightWithC#WithNUnit\\PlaywrightTests\\utilities\\ConfigManager.cs:line 27\r\n   at PlaywrightTests.Utilities.ConfigManager..cctor() in D:\\PlaywrightWithC#WithNUnit\\PlaywrightTests\\utilities\\ConfigManager.cs:line 15"
+  },
+  "stage": "finished",
+  "steps": [],
+  "attachments": [
+    {
+      "name": "Console Output",
+      "source": "316e30bc-5632-4a13-b860-9df99d77b085-attachment.txt",
+      "type": "text/plain"
+    }
+  ],
+  "parameters": [],
+  "start": 1749754196798,
+  "stop": 1749754198293
+}

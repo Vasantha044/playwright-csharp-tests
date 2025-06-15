@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+  <RunConfiguration>
+    <MaxCpuCount>1</MaxCpuCount>
+  </RunConfiguration>
+  <TestRunParameters>
+    <Parameter name="Headless" value="false" />
+    <Parameter name="Retries" value="2" />
+    <Parameter name="Timeout" value="60000" />
+    <Parameter name="SlowMo" value="1000" />
+    <Parameter name="NavigationTimeout" value="60000" />
+  </TestRunParameters>
+</RunSettings>

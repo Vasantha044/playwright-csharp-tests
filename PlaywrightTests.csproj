@@ -1,0 +1,69 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <RestoreLockedMode Condition="'$(ContinuousIntegrationBuild)' == 'true'">true</RestoreLockedMode>
+   <!-- <UserSecretsId>ada03e97-e09e-4e0e-afee-69b50ec4cd7e</UserSecretsId> -->
+    <UserSecretsId>playwright-tests-secret-001</UserSecretsId>
+    <RunSettingsFilePath>D:\PlaywrightWithC#WithNUnit\PlaywrightTests\test.runsettings</RunSettingsFilePath>
+  </PropertyGroup>
+
+  <ItemGroup>
+   <None Update="allureConfig.json">
+    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+  </None>
+    </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Allure.Commons" Version="3.5.0.73" />
+    <PackageReference Include="Allure.NUnit" Version="2.12.0" />
+    <PackageReference Include="Bogus" Version="35.6.3" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.6" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="9.0.6" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.6" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="9.0.6" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
+    <PackageReference Include="NUnit" Version="3.13.3" />
+    <PackageReference Include="Microsoft.Playwright" Version="1.52.0" />
+    <PackageReference Include="NUnit.Allure" Version="1.2.1.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="5.0.0" />
+    <PackageReference Include="NUnit.Analyzers" Version="4.1.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.collector" Version="6.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  
+  <ItemGroup>
+  <None Update="appsettings.json">
+    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+  </None>
+</ItemGroup>
+
+  <!-- <ItemGroup>
+    <Using Include="NUnit.Framework" />
+  </ItemGroup> -->
+  <PropertyGroup>
+  <NoWarn>$(NoWarn);NU1601</NoWarn>
+</PropertyGroup>
+
+<Target Name="TWL">
+  <Exec Command="dotnet test --settings D:\PlaywrightWithC#WithNUnit\PlaywrightTests\test.runsettings" />
+</Target>
+
+<Target Name="CleanAllureResults" BeforeTargets="Test">
+  <Message Text="Cleaning allure-results folder at $(MSBuildProjectDirectory)\allure-results" Importance="high" />
+  <RemoveDir Directories="$(MSBuildProjectDirectory)\allure-results" />
+</Target>
+
+
+</Project>
