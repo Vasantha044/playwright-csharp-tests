@@ -30,4 +30,4 @@ jobs:
         run: playwright install
 
       - name: Run tests
-        run: dotnet test --configuration Release --settings PlaywrightTests/test.runsettings
+  run: dotnet test --configuration Release --settings test.runsettings
