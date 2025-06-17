@@ -6,7 +6,6 @@ using Allure.NUnit.Attributes;
 using PlaywrightTests.Pages;
 using PlaywrightTests.Utilities;
 using System;
-using NUnit.Framework.Constraints;  // Import the helper namespace
 
 namespace PlaywrightTests.Tests
 {
@@ -18,51 +17,53 @@ namespace PlaywrightTests.Tests
         private ApplyExtraWorkingPage extraWorkPage;
         private LoginPage _loginPage;
         private AddEmployeeHelper _addEmployeeHelper;
-        private LogoutPage _logOut;
-
-
-        private Employee? createLead, createEmployee;
+        private LogoutPage _logOutPage;
 
         [SetUp]
         public async Task Setup()
         {
             _loginPage = new LoginPage(Page);
+            extraWorkPage = new ApplyExtraWorkingPage(Page);
+            _addEmployeeHelper = new AddEmployeeHelper(Page);
+            _logOutPage = new LogoutPage(Page);
+
             await _loginPage.LoginWithValidOrInvalidCred(
                 ConfigManager.Settings.Credentials?.Username!,
                 ConfigManager.Settings.Credentials?.Password!);
-
-            extraWorkPage = new ApplyExtraWorkingPage(Page);
-            _addEmployeeHelper = new AddEmployeeHelper(Page);  // Initialize helper with Page
-            _logOut = new LogoutPage(Page);
         }
 
         [Test]
         [Category("ExtraWork")]
-        [AllureStep]
-        public async Task TestApplyExtraWorkingHours()
+        [AllureStep("Apply and Approve Extra Working Hours")]
+        public async Task TestApplyAndApproveExtraWorkingHours()
         {
-            createLead = await _addEmployeeHelper.CreateOrAddEmployeeInUrbuddi("Admin");
+            // Step 1: Create Lead and Employee
+            var lead = await _addEmployeeHelper.CreateOrAddEmployeeInUrbuddi("Admin");
             await Page.WaitForLoadStateAsync(LoadState.NetworkIdle);
-            createEmployee = await _addEmployeeHelper.CreateOrAddEmployeeInUrbuddi("Employee");
-            Console.Write(createEmployee.Email);
-            Console.Write(createLead.Email);
-            await _logOut.LogoutAsync();
-            await _loginPage.LoginWithValidOrInvalidCred(createEmployee!.Email!, createEmployee!.Password!);
+            var employee = await _addEmployeeHelper.CreateOrAddEmployeeInUrbuddi("Employee");
+
+            Console.WriteLine($"Lead Email: {lead.Email}");
+            Console.WriteLine($"Employee Email: {employee.Email}");
+
+            // Step 2: Logout as Admin, Login as Employee
+            await _logOutPage.LogoutAsync();
+            await _loginPage.LoginWithValidOrInvalidCred(employee.Email!, employee.Password!);
+
+            // Step 3: Apply for Extra Working Hours
             await extraWorkPage.ClickReimbursementSideBarAsync();
             await extraWorkPage.ClickApplyExtraWorkButtonAsync();
             await extraWorkPage.EnterRandomDateAndHoursAsync();
-            await extraWorkPage.SelectLeadAsync(createLead!.Email!.ToLower());
+            await extraWorkPage.SelectLeadAsync(lead.Email!.ToLower());
             await extraWorkPage.SubmitFormAsync();
-            await _logOut.LogoutAsync();
-            await _logOut.VerifyLoggedOutAsync();
-        }
-       
-        [Test]
-        public async Task TestApproveExtraWorkingHours()
-        {
-              await extraWorkPage.ClickApproveLeaveButtonAsync(createEmployee.EmployeeID);
-        }
 
+            // Step 4: Logout as Employee, Login back as Admin
+            await _logOutPage.LogoutAsync();
+            await _loginPage.LoginWithValidOrInvalidCred(
+                ConfigManager.Settings.Credentials?.Username!,
+                ConfigManager.Settings.Credentials?.Password!);
+
+            // Step 5: Approve the Extra Working Hours
+            await extraWorkPage.ClickApproveLeaveButtonAsync(employee.EmployeeID);
+        }
     }
-    
 }
