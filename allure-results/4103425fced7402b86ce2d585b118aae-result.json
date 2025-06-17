@@ -1,0 +1,71 @@
+{
+  "uuid": "dc4a8d21-3199-41fa-9ff8-fa46c64d5d61",
+  "historyId": "ee3094042ebe1d3bf1350c31c21b2632",
+  "testCaseId": "809f65406792572d067897734a14d26c",
+  "fullName": "PlaywrightTests:PlaywrightTests.Tests.LoginTest.TC_02_LoginWithInvalidEmail()",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-69IKO88"
+    },
+    {
+      "name": "language",
+      "value": "C#"
+    },
+    {
+      "name": "framework",
+      "value": "NUnit 3"
+    },
+    {
+      "name": "package",
+      "value": "PlaywrightTests.Tests"
+    },
+    {
+      "name": "testMethod",
+      "value": "TC_02_LoginWithInvalidEmail"
+    },
+    {
+      "name": "testClass",
+      "value": "LoginTest"
+    },
+    {
+      "name": "suite",
+      "value": "Login Tests"
+    }
+  ],
+  "links": [],
+  "name": "TC_02_LoginWithInvalidEmail",
+  "status": "passed",
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "TC_02_LoginWithInvalidEmail",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1750183383514,
+      "stop": 1750183389639
+    }
+  ],
+  "attachments": [
+    {
+      "name": "Console Output",
+      "source": "155cb236-640e-4a72-b519-2ef809d14869-attachment.txt",
+      "type": "text/plain"
+    }
+  ],
+  "parameters": [],
+  "start": 1750183382541,
+  "stop": 1750183389980
+}

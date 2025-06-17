@@ -15,8 +15,8 @@ namespace PlaywrightTests.Tests
     {
         private LoginPage _loginPage;
 
-        string username = ConfigManager.Settings.SystemCredentials?.Username ?? "";
-        string password = ConfigManager.Settings.SystemCredentials?.Password ?? "";
+        string username = ConfigManager.Settings.SystemCredentials?.Username ?? ConfigManager.Settings.Credentials?.Username!;
+        string password = ConfigManager.Settings.SystemCredentials?.Password ?? ConfigManager.Settings.Credentials?.Password!;
         string email = ConfigManager.Settings.Credentials?.InvalidUsername ?? "";
 
         [SetUp]

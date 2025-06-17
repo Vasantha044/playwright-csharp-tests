@@ -1,0 +1,3 @@
+---- Loaded Test Parameters from RunSettings ----
+--------------------------------------------------
+Login failed. Invalid credentials message is visible.

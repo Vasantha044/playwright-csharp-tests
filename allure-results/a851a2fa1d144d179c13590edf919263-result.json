@@ -1,0 +1,71 @@
+{
+  "uuid": "21561e65-6eff-43e1-9abd-2cf1c715c514",
+  "historyId": "3591c506a5643f4c88ad217ea0068713",
+  "testCaseId": "8717f363c44255d54cac4a570801e36c",
+  "fullName": "PlaywrightTests:PlaywrightTests.Tests.LoginTest.TC_01_LoginWithValidCredentials()",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-69IKO88"
+    },
+    {
+      "name": "language",
+      "value": "C#"
+    },
+    {
+      "name": "framework",
+      "value": "NUnit 3"
+    },
+    {
+      "name": "package",
+      "value": "PlaywrightTests.Tests"
+    },
+    {
+      "name": "testMethod",
+      "value": "TC_01_LoginWithValidCredentials"
+    },
+    {
+      "name": "testClass",
+      "value": "LoginTest"
+    },
+    {
+      "name": "suite",
+      "value": "Login Tests"
+    }
+  ],
+  "links": [],
+  "name": "TC_01_LoginWithValidCredentials",
+  "status": "passed",
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "TC_01_LoginWithValidCredentials",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1750183469769,
+      "stop": 1750183475842
+    }
+  ],
+  "attachments": [
+    {
+      "name": "Console Output",
+      "source": "781be3f8-92c7-4810-98b2-0c5ddf004d78-attachment.txt",
+      "type": "text/plain"
+    }
+  ],
+  "parameters": [],
+  "start": 1750183468963,
+  "stop": 1750183476112
+}

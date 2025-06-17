@@ -1,0 +1,12 @@
+{
+  "uuid": "7f526b69-5ea7-456a-b661-8e22965cda88",
+  "name": "PlaywrightTests.Tests.LoginTest.TC_02_LoginWithInvalidEmail",
+  "children": [
+    "23cb2395-b424-42c1-9088-913b28930432"
+  ],
+  "befores": [],
+  "afters": [],
+  "links": [],
+  "start": 1750183476117,
+  "stop": 1750183483422
+}
