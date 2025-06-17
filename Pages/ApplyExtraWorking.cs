@@ -19,8 +19,7 @@ namespace PlaywrightTests.Pages
         private readonly ILocator submitButton;
         private readonly ILocator extraWorkingHoursAppliedsuccessMessage;
         private readonly ILocator searchEmployee;
-
-        private ActionHelper? actionHelper;
+        private ActionHelper actionHelper;
 
         private readonly ILocator leaveManagementSideBar;
         private readonly ILocator requestTabButton;
@@ -43,6 +42,7 @@ namespace PlaywrightTests.Pages
             searchEmployee = page.Locator("//input[@aria-label='EMP ID Filter Input']");
             scrollRight = "div.ag-body-horizontal-scroll-viewport";
             approveLeaveButton = page.Locator("(//button[text()='Approve'])[1]");
+             actionHelper = new ActionHelper(_page); 
         }
 
         public async Task ClickReimbursementSideBarAsync()
@@ -93,13 +93,13 @@ namespace PlaywrightTests.Pages
         {
             await Expect(reimbursementSideBar).ToBeVisibleAsync();
 
-            await leaveManagementSideBar.ClickAsync();
+            await reimbursementSideBar.ClickAsync();
             await requestTabButton.ClickAsync();
 
             await Expect(searchEmployee).ToBeVisibleAsync();
             await searchEmployee.FillAsync(email);
 
-            await actionHelper?.ScrollRightAsync(scrollRight);
+            await actionHelper!.ScrollRightAsync(scrollRight);
             await approveLeaveButton.ClickAsync();
         }
     }

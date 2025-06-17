@@ -1,0 +1,7 @@
+Login successful. Dashboard is visible.
+Lead Email: TestGino_Wisozk@gmail.com
+Employee Email: TestJason71@yahoo.com
+Login successful. Dashboard is visible.
+Login successful. Dashboard is visible.
+✅ Screenshot taken: D:\PlaywrightWithC#WithNUnit\PlaywrightTests\bin\Debug\net8.0\../../../allure-results\TestApplyAndApproveExtraWorkingHours.png
+❌ Screenshot capture failed: Value cannot be null. (Parameter 'key')

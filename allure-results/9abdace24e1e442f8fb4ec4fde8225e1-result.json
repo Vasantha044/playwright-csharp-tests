@@ -1,0 +1,62 @@
+{
+  "uuid": "bbb5787e-21b3-4bc6-b26a-01861a1d211f",
+  "historyId": "d36c5c61298abe7b8352d80fb5375358",
+  "testCaseId": "35fd52a975e09c2975b796e3c0a52092",
+  "fullName": "PlaywrightTests:PlaywrightTests.Tests.ApplyLeaveTest.TestApplyAndApproveLeave()",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-69IKO88"
+    },
+    {
+      "name": "language",
+      "value": "C#"
+    },
+    {
+      "name": "framework",
+      "value": "NUnit 3"
+    },
+    {
+      "name": "package",
+      "value": "PlaywrightTests.Tests"
+    },
+    {
+      "name": "testMethod",
+      "value": "TestApplyAndApproveLeave"
+    },
+    {
+      "name": "testClass",
+      "value": "ApplyLeaveTest"
+    },
+    {
+      "name": "suite",
+      "value": "Apply and Approve Leave Test"
+    }
+  ],
+  "links": [],
+  "name": "TestApplyAndApproveLeave",
+  "status": "broken",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "Microsoft.Playwright.TargetClosedException : Target page, context or browser has been closed",
+    "trace": "   at Microsoft.Playwright.Transport.Connection.InnerSendMessageToServerAsync[T](ChannelOwner object, String method, Dictionary`2 dictionary, Boolean keepNulls) in /_/src/Playwright/Transport/Connection.cs:line 206\r\n   at Microsoft.Playwright.Transport.Connection.WrapApiCallAsync[T](Func`1 action, Boolean isInternal) in /_/src/Playwright/Transport/Connection.cs:line 535\r\n   at PlaywrightTests.Pages.LoginPage.LoginWithValidOrInvalidCred(String username, String password) in D:\\PlaywrightWithC#WithNUnit\\PlaywrightTests\\Pages\\LoginTestMethods.cs:line 24\r\n   at PlaywrightTests.Tests.ApplyLeaveTest.Init() in D:\\PlaywrightWithC#WithNUnit\\PlaywrightTests\\Test\\ApplyLeaveTest.cs:line 30\r\n   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.BlockUntilCompleted()\r\n   at NUnit.Framework.Internal.MessagePumpStrategy.NoMessagePumpStrategy.WaitForCompletion(AwaitAdapter awaiter)\r\n   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(Func`1 invoke)\r\n   at NUnit.Framework.Internal.Commands.SetUpTearDownItem.RunSetUpOrTearDownMethod(TestExecutionContext context, IMethodInfo method)\r\n   at NUnit.Framework.Internal.Commands.SetUpTearDownItem.RunSetUp(TestExecutionContext context)\r\n   at NUnit.Framework.Internal.Commands.SetUpTearDownCommand.<>c__DisplayClass0_0.<.ctor>b__0(TestExecutionContext context)\r\n   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.<>c__DisplayClass1_0.<Execute>b__0()\r\n   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)"
+  },
+  "stage": "finished",
+  "steps": [],
+  "attachments": [
+    {
+      "name": "Console Output",
+      "source": "b389b189-9050-4d96-b444-d4f07669b8bb-attachment.txt",
+      "type": "text/plain"
+    }
+  ],
+  "parameters": [],
+  "start": 1750188081703,
+  "stop": 1750188085756
+}

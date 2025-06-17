@@ -59,8 +59,7 @@ namespace PlaywrightTests.Tests
             // Step 4: Logout as Employee, Login back as Admin
             await _logOutPage.LogoutAsync();
             await _loginPage.LoginWithValidOrInvalidCred(
-                ConfigManager.Settings.Credentials?.Username!,
-                ConfigManager.Settings.Credentials?.Password!);
+               lead.Email!,lead.Password! );
 
             // Step 5: Approve the Extra Working Hours
             await extraWorkPage.ClickApproveLeaveButtonAsync(employee.EmployeeID);
