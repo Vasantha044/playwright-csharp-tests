@@ -1,8 +1,0 @@
----- Loaded Test Parameters from RunSettings ----
-Headless = false
-Retries = 2
-Timeout = 60000
-SlowMo = 1000
-NavigationTimeout = 60000
---------------------------------------------------
-Login failed. Invalid credentials message is visible.

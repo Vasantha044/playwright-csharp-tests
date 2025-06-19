@@ -1,1 +1,0 @@
-Failed to capture failure artifacts: Target page, context or browser has been closed

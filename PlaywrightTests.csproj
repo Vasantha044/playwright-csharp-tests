@@ -57,12 +57,12 @@
 </PropertyGroup>
 
 <Target Name="TWL">
-  <Exec Command="dotnet test --settings D:\PlaywrightWithC#WithNUnit\PlaywrightTests\test.runsettings" />
+  <Exec Command="dotnet test --settings $(RunSettingsFilePath)" />
 </Target>
 
-<Target Name="CleanAllureResults" BeforeTargets="Test">
+<!-- <Target Name="CleanAllureResults" BeforeTargets="Test">
   <Message Text="Cleaning allure-results folder at $(MSBuildProjectDirectory)\allure-results" Importance="high" />
   <RemoveDir Directories="$(MSBuildProjectDirectory)\allure-results" />
-</Target>
+</Target> -->
 
 </Project>

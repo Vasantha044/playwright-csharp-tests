@@ -1,5 +1,0 @@
----- Loaded Test Parameters from RunSettings ----
---------------------------------------------------
-Secret User: vasantha.tolapu@optimworks.com
-Login successful. Dashboard is visible.
-Total holidays displayed: 3

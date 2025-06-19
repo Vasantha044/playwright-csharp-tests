@@ -1,2 +1,0 @@
-Screenshot taken for failed test: TestApplyExtraWorkingHours
-Screenshot capture failed: Value cannot be null. (Parameter 'key')

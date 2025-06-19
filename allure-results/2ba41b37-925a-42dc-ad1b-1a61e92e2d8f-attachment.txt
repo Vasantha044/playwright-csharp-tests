@@ -1,3 +1,0 @@
-Login successful. Dashboard is visible.
-TestKira36@hotmail.comTestRene96@hotmail.comLogin successful. Dashboard is visible.
-Failed to capture failure artifacts: Value cannot be null. (Parameter 'key')

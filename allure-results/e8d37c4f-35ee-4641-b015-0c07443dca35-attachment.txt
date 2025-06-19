@@ -1,3 +1,0 @@
-Login successful. Dashboard is visible.
-TestJody42@gmail.comTestDagmar.Mueller@yahoo.comLogin successful. Dashboard is visible.
-Leave applied successfully.

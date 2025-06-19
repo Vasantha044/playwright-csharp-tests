@@ -1,0 +1,9 @@
+---- ✅ Loaded Parameters from RunSettings ----
+Headless           = False
+SlowMo             = 1000
+Timeout            = 60000
+NavigationTimeout  = 60000
+------------------------------------------------
+Login successful. Dashboard is visible.
+✅ Screenshot saved at: D:\PlaywrightWithC#WithNUnit\PlaywrightTests\bin\Debug\net8.0\..\..\..\allure-results\TestApplyAndApproveExtraWorkingHours_Failed_20250619_004201.png
+❌ Screenshot capture failed: Value cannot be null. (Parameter 'key')

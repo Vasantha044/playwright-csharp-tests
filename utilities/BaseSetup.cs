@@ -18,15 +18,22 @@ namespace PlaywrightTests
         private readonly string allureResultsPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "../../../allure-results");
         private readonly AllureLifecycle allure = AllureLifecycle.Instance;
 
+        private bool headless;
+        private int slowMo;
+        private int timeout;
+        private int navigationTimeout;
+
         [SetUp]
         public async Task TestSetupAsync()
         {
+            ReadRunSettingsParameters();
+
             PlaywrightInstance = await Playwright.CreateAsync();
 
             Browser = await PlaywrightInstance.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
             {
-                Headless = false,
-                SlowMo = 1000
+                Headless = headless,
+                SlowMo = slowMo
             });
 
             Context = await Browser.NewContextAsync(new BrowserNewContextOptions
@@ -34,10 +41,42 @@ namespace PlaywrightTests
                 RecordVideoDir = allureResultsPath
             });
 
-            Context.SetDefaultTimeout(45000);
-            Context.SetDefaultNavigationTimeout(60000);
+            Context.SetDefaultTimeout(timeout);
+            Context.SetDefaultNavigationTimeout(navigationTimeout);
 
             Page = await Context.NewPageAsync();
+        }
+
+        private void ReadRunSettingsParameters()
+        {
+            try
+            {
+                // Required: Ensure all values are set in .runsettings file
+                string headlessParam = TestContext.Parameters["Headless"];
+                string slowMoParam = TestContext.Parameters["SlowMo"];
+                string timeoutParam = TestContext.Parameters["Timeout"];
+                string navigationTimeoutParam = TestContext.Parameters["NavigationTimeout"];
+
+                if (headlessParam == null || slowMoParam == null || timeoutParam == null || navigationTimeoutParam == null)
+                    throw new ArgumentException("Missing one or more required parameters in .runsettings file.");
+
+                headless = headlessParam.ToLower() == "true";
+                slowMo = int.Parse(slowMoParam);
+                timeout = int.Parse(timeoutParam);
+                navigationTimeout = int.Parse(navigationTimeoutParam);
+
+                Console.WriteLine("---- ✅ Loaded Parameters from RunSettings ----");
+                Console.WriteLine($"Headless           = {headless}");
+                Console.WriteLine($"SlowMo             = {slowMo}");
+                Console.WriteLine($"Timeout            = {timeout}");
+                Console.WriteLine($"NavigationTimeout  = {navigationTimeout}");
+                Console.WriteLine("------------------------------------------------");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error loading test parameters: {ex.Message}");
+                throw;
+            }
         }
 
         [TearDown]
@@ -61,19 +100,17 @@ namespace PlaywrightTests
                             FullPage = true
                         });
 
-                        Console.WriteLine($"✅ Screenshot taken: {screenshotPath}");
-
-                        // ✅ Attach screenshot using the valid overload
+                        Console.WriteLine($"Screenshot taken: {screenshotPath}");
                         allure.AddAttachment("Failure Screenshot", "image/png", screenshotPath);
                     }
                     else
                     {
-                        Console.WriteLine("⚠️ Page already closed. Screenshot not taken.");
+                        Console.WriteLine("Page already closed. Screenshot not taken.");
                     }
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"❌ Screenshot capture failed: {ex.Message}");
+                    Console.WriteLine($"Screenshot capture failed: {ex.Message}");
                 }
             }
 
@@ -89,7 +126,7 @@ namespace PlaywrightTests
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"❌ Cleanup failed: {ex.Message}");
+                Console.WriteLine($"Cleanup failed: {ex.Message}");
             }
         }
     }

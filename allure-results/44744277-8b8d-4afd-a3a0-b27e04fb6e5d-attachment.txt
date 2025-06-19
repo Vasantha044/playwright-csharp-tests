@@ -1,2 +1,0 @@
-Screenshot taken for failed test: TestApplyLeave
-Screenshot capture failed: Value cannot be null. (Parameter 'key')
