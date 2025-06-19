@@ -31,3 +31,19 @@ jobs:
 
       - name: Run tests
         run: dotnet test --configuration Release --settings test.runsettings
+
+  notify-success:
+    needs: test
+    runs-on: ubuntu-latest
+    if: ${{ success() }}
+    steps:
+      - name: ✅ Notify on Success
+        run: echo "✅ Playwright C# Tests Passed on main branch!"
+
+  notify-failure:
+    needs: test
+    runs-on: ubuntu-latest
+    if: ${{ failure() }}
+    steps:
+      - name: ❌ Notify on Failure
+        run: echo "❌ Playwright C# Tests Failed on main branch!"
